@@ -1,0 +1,99 @@
+<html lang="en">
+<head>
+ 
+  {% load static %}
+  {% include 'includes.html' %}
+  
+</head>
+<body>
+    {% include 'landlord/menu.html' %}
+    <div class="container mt-5 card">
+        <h2 class="text-success">Edit House</h2>
+        <form method="post" action="{% url 'update_house' house.houseId %}">
+            {% csrf_token %}
+            <div class="row">
+            <div class="mb-3 col-sm-6">
+                <label for="landLordId">LandLord ID</label>
+                <input type="text" class="form-control" id="landLordId" name="landLordId" value="{{ house.landLordId }}">
+            </div>
+            <div class="mb-3 col-sm-6">
+                <label for="registerDate">Register Date</label>
+                <input type="text" class="form-control" id="registerDate" name="registerDate" value="{{ house.registerDate }}">
+            </div>
+            <div class="mb-3 col-sm-6">
+                <label for="address">Address</label>
+                <input type="text" class="form-control" id="address" name="address" value="{{ house.address }}">
+            </div>
+            <div class="mb-3 col-sm-6">
+                <label for="cityName">City Name</label>
+                <input type="text" class="form-control" id="cityName" name="cityName" value="{{ house.cityName }}">
+            </div>
+            
+            <div class="mb-3 col-sm-6">
+                <label for="houseType" class="form-label">House Type</label>
+                <select class="form-select" id="houseType" name="houseType" required>
+                    <option>{{ house.houseType }}</option>
+                    <option >Apartment</option>
+                    <option >Individual House</option>
+                </select>
+            </div>
+            <div class="mb-3 col-sm-6">
+                <label for="houseName">House Name</label>
+                <input type="text" class="form-control" id="houseName" name="houseName" value="{{ house.houseName }}">
+            </div>
+            <div class="mb-3 col-sm-6">
+                <label for="floorNumber">Floor Number</label>
+                <input type="text" class="form-control" id="floorNumber" name="floorNumber" value="{{ house.floorNumber }}">
+            </div>
+            <div class="mb-3 col-sm-6">
+                <label for="numberOfBedRooms">Number of Bedrooms</label>
+                <input type="text" class="form-control" id="numberOfBedRooms" name="numberOfBedRooms" value="{{ house.numberOfBedRooms }}">
+            </div>
+            <div class="mb-3 col-sm-6">
+                <label for="numberOfBathRooms">Number of Bathrooms</label>
+                <input type="text" class="form-control" id="numberOfBathRooms" name="numberOfBathRooms" value="{{ house.numberOfBathRooms }}">
+            </div>
+            <div class="mb-3 col-sm-6">
+                <label for="squareFeet">Square Feet</label>
+                <input type="text" class="form-control" id="squareFeet" name="squareFeet" value="{{ house.squareFeet }}">
+            </div>
+            <div class="mb-3 col-sm-6">
+                <label for="houseDescription">House Description</label>
+                <input type="text" class="form-control" id="houseDescription" name="houseDescription" value="{{ house.houseDescription }}">
+            </div>
+            <div class="mb-3 col-sm-6">
+                <label for="utilitiesDescription">Utilities Description</label>
+                <input type="text" class="form-control" id="utilitiesDescription" name="utilitiesDescription" value="{{ house.utilitiesDescription }}">
+            </div>
+            <div class="mb-3 col-sm-6 d-none">
+                <label for="houseImage">House Image</label>
+                <input type="text" class="form-control" id="houseImage" name="houseImage" value="{{ house.houseImage }}">
+            </div>
+            <div class="mb-3 col-sm-6">
+                <label for="nearByEmenities">Nearby Amenities</label>
+                <input type="text" class="form-control" id="nearByEmenities" name="nearByEmenities" value="{{ house.nearByEmenities }}">
+            </div>
+            <div class="mb-3 col-sm-6">
+                <label for="mapLocation">Map Location</label>
+                <input type="text" class="form-control" id="mapLocation" name="mapLocation" value="{{ house.mapLocation }}">
+            </div>
+            <div class="mb-3 col-sm-6">
+                <label for="rentPrice">Rent Price</label>
+                <input type="text" class="form-control" id="rentPrice" name="rentPrice" value="{{ house.rentPrice }}">
+            </div>
+          
+            <div class="mb-3 col-sm-6">
+                <label for="status" class="form-label">Status</label>
+                <select class="form-select" id="status" name="status" required>
+                    <option>{{house.status}}</option>
+                    <option>Occupied</option>
+                    <option>Vacant</option>
+                </select>
+            </div>
+        </div>
+            <center><button type="submit" style="200px" class="btn btn-primary mt-3">Save Changes</button></center>
+        </form>
+    </div>
+
+</body>
+</html>

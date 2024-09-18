@@ -1,0 +1,65 @@
+<html lang="en">
+<head>
+ 
+  {% load static %}
+  {% include 'includes.html' %}
+  
+</head>
+<body>
+    {% include 'admin/menu.html' %}
+    <div class="mt-5 table-responsive" style="margin-left: 20px">
+        <h3 class="mb-4">House Details</h3>
+        <table class="table table-bordered">
+            <thead class="thead-dark">
+                <tr>
+                    <th>landLordId</th>
+                   
+                    <th>Register Date</th>
+                    <th>Address</th>
+                    <th>City</th>
+                    <th>Type</th>
+                    <th>Name</th>
+                    <th>Floor</th>
+                    <th>Bedrooms</th>
+                    <th>Bathrooms</th>
+                    <th>Square Feet</th>
+                    <th>Description</th>
+                    <th>Utilities</th>
+                    <th>Image</th>
+                    <th>Amenities</th>
+                    <th>Price</th>
+                    <th>Status</th>
+                    
+                </tr>
+            </thead>
+            <tbody>
+                {% for house in houses %}
+                <tr>
+                    
+                   <td>{{ house.landLordId }}</td>
+                    <td>{{ house.registerDate }}</td>
+                    <td>{{ house.address }}</td>
+                    <td>{{ house.cityName }}</td>
+                    <td>{{ house.houseType }}</td>
+                    <td>{{ house.houseName }}</td>
+                    <td>{{ house.floorNumber }}</td>
+                    <td>{{ house.numberOfBedRooms }}</td>
+                    <td>{{ house.numberOfBathRooms }}</td>
+                    <td>{{ house.squareFeet }}</td>
+                    <td>{{ house.houseDescription }}</td>
+                    <td>{{ house.utilitiesDescription }}</td>
+                    <td><img src="{% static 'uploads/' %}{{ house.houseImage }}" alt=""  style="width:80px;height:80px"></td>
+                      
+                    
+                    <td>{{ house.nearByEmenities }}</td>
+                    <td>{{ house.rentPrice }}</td>
+                    <td>{{ house.status }}</td>
+                    
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    <script src="{% static 'bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+</body>
+</html>

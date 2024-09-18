@@ -1,0 +1,43 @@
+<html lang="en">
+<head>
+ 
+  {% load static %}
+  {% include 'includes.html' %}
+  
+</head>
+<body>
+    {% include 'admin/menu.html' %}
+<div class="container mt-5">
+    <h2>Tenants List</h2>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col">User ID</th>
+                <th scope="col">Full Name</th>
+                <th scope="col">Address</th>
+                <th scope="col">Email</th>
+                <th scope="col">Mobile</th>
+                <th scope="col">Aadhar Number</th>
+                <th scope="col">User Picture</th>
+                <th scope="col">Register Date</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for user in users %}
+            <tr>
+                <th scope="row">{{ user.userId }}</th>
+                <td>{{ user.fullName }}</td>
+                <td>{{ user.address }}</td>
+                <td>{{ user.email }}</td>
+                <td>{{ user.mobile }}</td>
+                <td>{{ user.aadharNumber }}</td>
+                <td><img src="{% static 'uploads/' %}{{ user.userPic }}" alt="User Picture" class="img-thumbnail" style="width: 50px; height: 50px;"></td>
+                <td>{{ user.registerDate }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+</body>
+</html>

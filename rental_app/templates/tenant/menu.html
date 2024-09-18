@@ -1,0 +1,36 @@
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+    <div class="container-fluid">
+        {% load static %}
+      <a class="navbar-brand" href="#"><img class="rounded-circle" src="{% static 'images/cozy.jpg' %}" width="80" height="80" alt="" ></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="collapsibleNavbar">
+        <ul class="navbar-nav me-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="/tenant_home">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/tenant_profile">Profile</a>
+          </li>
+                   
+       <!--   <li class="nav-item">
+            <a class="nav-link" href="/show_feedbacks_organizer">History</a>
+          </li>  -->
+          
+          <li class="nav-item">
+            <a class="nav-link" href="/logout">Logout</a>
+          </li>
+
+          
+
+         
+
+        </ul>
+
+        <form class="d-flex">
+            <span class="text-white">USER:&nbsp;</span> <span class='text-success'><b>{{ user.fullName }}</b></span> ,&nbsp;&nbsp;<span class="text-white"> USER TYPE:&nbsp;</span> <span class='text-warning'><b>{{user.userType}} </b></span>
+          </form>
+      </div>
+    </div>
+  </nav>
